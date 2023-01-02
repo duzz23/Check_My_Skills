@@ -1,0 +1,983 @@
+Index: WebPython/README.md
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+># Web Python 2022-03\n\n\n### Занятия\n\n- [Урок 1. Знакомство с курсом. Введение в HTTP. Работа с библиотеками requests и BeautifulSoup](lessons/lesson.01/)\n- [Урок 2. Основы ООП. Принципы ООП](lessons/lesson.02/)\n- [Урок 3. ООП. Магические методы, утиная типизация, статические методы, методы класса](lessons/lesson.03/)\n- [Урок 4. Тестирование, pytest, coverage, фикстуры, моки, параметризация](lessons/lesson.04/)\n- [Урок 5. Контейнеризация. Знакомство с Docker](lessons/lesson.05/)\n- [Урок 6. ORM, SQLAlchemy](lessons/lesson.06/)\n- [Урок 7. Знакомство с фронтендом, Bootstrap 5](lessons/lesson.07/)\n- [Урок 8. Знакомство с Flask. Blueprints; Flask-WTF; flash](lessons/lesson.08/)\n- [Урок 9. Flask-SQLAlchemy, Flask-Migrate](lessons/lesson.09/)\n- [Урок 10. Связь контейнеров в docker. Сборка проекта на Flask. Тестирование Flask приложения](lessons/lesson.10/)\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/WebPython/README.md b/WebPython/README.md
+--- a/WebPython/README.md	(revision 4326e02325eef0daa73a1221334a3205ec3bbd62)
++++ b/WebPython/README.md	(date 1672654496500)
+@@ -13,3 +13,5 @@
+ - [Урок 8. Знакомство с Flask. Blueprints; Flask-WTF; flash](lessons/lesson.08/)
+ - [Урок 9. Flask-SQLAlchemy, Flask-Migrate](lessons/lesson.09/)
+ - [Урок 10. Связь контейнеров в docker. Сборка проекта на Flask. Тестирование Flask приложения](lessons/lesson.10/)
++
++
+Index: WebPython/lessons/lessons.3/step_5.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/WebPython/lessons/lessons.3/step_5.py b/WebPython/lessons/lessons.3/step_5.py
+new file mode 100644
+--- /dev/null	(date 1672654496623)
++++ b/WebPython/lessons/lessons.3/step_5.py	(date 1672654496623)
+@@ -0,0 +1,14 @@
++class MyStr(str):
++
++    def __add__(self, other) -> "MyStr":
++        return self.__class__(f"{self}{other}")
++
++    def __iadd__(self, other):
++        return self.__add__(other)
++
++
++a = MyStr("abc")
++
++a += 123
++
++print(a)
+\ No newline at end of file
+Index: WebPython/lessons/lessons.3/step_6.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/WebPython/lessons/lessons.3/step_6.py b/WebPython/lessons/lessons.3/step_6.py
+new file mode 100644
+--- /dev/null	(date 1672654496630)
++++ b/WebPython/lessons/lessons.3/step_6.py	(date 1672654496630)
+@@ -0,0 +1,35 @@
++class User:
++    SPAM = "eggs"
++
++    def __init__(self, username: str, age: int):
++        self.username = username
++        self.age = age
++
++    def __str__(self):
++        # return self.username
++        return f"{self.username} {self.age}"
++
++    def __repr__(self):
++        # return str(self)
++        return f"{self.__class__.__name__}(username={self.username!r}, age={self.age})"
++
++    def __getattribute__(self, item):
++        print("__getattribute__", item)
++        return super().__getattribute__(item)
++
++    def __getattr__(self, item):
++        print("__getattr__", item)
++        # return super().__getattr__(item)
++        return f"hello {item}"
++
++
++john = User("john", 42)
++# john = User(username='john', age=42)
++
++print(john)
++print([john])
++print(john.username)
++print(getattr(john, "age"))
++print(john.hello)
++print(john.help)
++print(john.SPAM)
+\ No newline at end of file
+Index: WebPython/lessons/lessons.3/step_7.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/WebPython/lessons/lessons.3/step_7.py b/WebPython/lessons/lessons.3/step_7.py
+new file mode 100644
+--- /dev/null	(date 1672654496637)
++++ b/WebPython/lessons/lessons.3/step_7.py	(date 1672654496637)
+@@ -0,0 +1,88 @@
++class ShopItem:
++    def __init__(self, name: str, price: float):
++        self.name = name
++        self.price = price
++
++    def __str__(self):
++        return f"{self.__class__.__name__}(name={self.name!r}, price={self.price})"
++
++    def __repr__(self):
++        return str(self)
++
++
++class Smartphone(ShopItem):
++    pass
++
++
++class Tablet(ShopItem):
++    pass
++
++
++class Basket:
++    def __init__(self):
++        self._items = []
++
++    def add(self, item: ShopItem):
++        self._items.append(item)
++
++    def __iadd__(self, other: ShopItem):
++        self.add(other)
++        return self
++
++    def __getitem__(self, index) -> ShopItem:
++        return self._items[index]
++
++    def __setitem__(self, index: int, value: ShopItem):
++        if not isinstance(index, int):
++            raise TypeError("index must be int")
++
++        if not isinstance(value, ShopItem):
++            raise TypeError("value must be ShopItem")
++
++        self._items[index] = value
++
++    def __iter__(self):
++        return (si for si in self._items)
++
++    def __contains__(self, item):
++        return item in self._items
++
++    def __len__(self):
++        return len(self._items)
++
++
++basket = Basket()
++phone = Smartphone("iPhone", 999.99)
++# print(phone)
++# print([phone])
++# print(repr(phone))
++# print(f"phone: {phone}")
++# print(f"phone: {phone!r}")
++
++tablet = Tablet("Galaxy Tab", 1299.99)
++# basket.add(phone)
++# basket.add(tablet)
++
++basket += phone
++print("tablet in basket?", tablet in basket)
++
++basket += tablet
++print("tablet in basket?", tablet in basket)
++
++
++print(basket._items)
++print(basket[0])
++print(basket[1])
++# print(basket[2])
++
++basket[0] = tablet
++basket[1] = phone
++# basket["1"] = phone
++# basket[3] = 123
++
++print(basket._items)
++
++for item_ in basket:
++    print(item_)
++
++print(len(basket))
+\ No newline at end of file
+Index: WebPython/lessons/lessons.3/step_1.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/WebPython/lessons/lessons.3/step_1.py b/WebPython/lessons/lessons.3/step_1.py
+new file mode 100644
+--- /dev/null	(date 1672654496645)
++++ b/WebPython/lessons/lessons.3/step_1.py	(date 1672654496645)
+@@ -0,0 +1,66 @@
++from __future__ import annotations
++
++# age: int = 1
++# age = 1
++#
++# age = "23"
++age = "42"
++# age: int = 42
++#
++# # age = []
++# # age = {}
++# # age = ()
++#
++# age + 1
++# age + 1
++# age + 1
++#
++# print(age)
++
++
++class MyStr(str):
++
++    # def __add__(self, other) -> "MyStr":
++    def __add__(self, other) -> MyStr:
++        # return MyStr(f"{self}{other}")
++        return self.__class__(f"{self}{other}")
++
++    # def __mul__(self, other):
++    # def __dir__(self) -> Iterable[str]:
++
++    def __sub__(self, other: int) -> MyStr:
++        # print("other: ", other)
++        return self.__class__(self[:-other])
++
++
++name = MyStr("OTUS")
++# name = str("OTUS")
++print(name)
++print(name + " Hello")
++print(name + 123)
++
++a = MyStr("abc")
++b = 123
++# c = "def"
++c = 456
++# c + b
++print(a + b)
++print(a + b + c)
++
++print(["a", "b"] + ["c", "d"])
++
++print(a + b + c - 4)
++
++
++print(a - b)
++print(a[0])
++print(a[1])
++print(a[2])
++print(a[1:3])
++print(a[0:2])
++print(a[:2])
++print(a[:])
++print(a[:         -1])
++print(a[:(len(a) - 1)])
++
++print(a - 1)
+\ No newline at end of file
+Index: WebPython/lessons/lessom.2/atributes.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/WebPython/lessons/lessom.2/atributes.py b/WebPython/lessons/lessom.2/atributes.py
+new file mode 100644
+--- /dev/null	(date 1672654496603)
++++ b/WebPython/lessons/lessom.2/atributes.py	(date 1672654496603)
+@@ -0,0 +1,58 @@
++class Point:
++    class_attribute = "spam and eggs"
++
++    def __init__(self, x, y, next_point=None):
++        # self.class_attribute = "spam and eggs"
++
++        self.x = x
++        self.y = y
++        self.next_point = next_point
++
++    def __str__(self):
++        return f"Point(x={self.x}, y={self.y}, next={self.next_point})"
++
++
++def main():
++    print(Point)
++    print(Point.class_attribute)
++    # point = Point()
++    # point.x = 1
++    # point.y = 2
++    point1 = Point(23, 45)
++    print(point1)
++    print(point1.class_attribute)
++    point2 = Point(67, 89, point1)
++    print(point2)
++    print(point2.class_attribute)
++
++    print(vars(point1))
++    print(vars(point2))
++
++    point1.class_attribute = "foo"
++    point2.class_attribute = "bar"
++
++    print(Point.class_attribute)
++    print(point1.class_attribute)
++    print(point2.class_attribute)
++
++    point1.x = 123
++    point2.y = 456
++
++    print(point1)
++    print(point1.x)
++    print(vars(point1))
++    print(point2)
++    print(point2.y)
++    print(vars(point2))
++
++    print(point1)
++    print(point2)
++    point2.next_point.y = 765
++    print(point1)
++    print(point2)
++
++    print(point2.next_point is point1)
++
++
++if __name__ == '__main__':
++    main()
+Index: WebPython/lessons/lessom.2/point.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/WebPython/lessons/lessom.2/point.py b/WebPython/lessons/lessom.2/point.py
+new file mode 100644
+--- /dev/null	(date 1672654496611)
++++ b/WebPython/lessons/lessom.2/point.py	(date 1672654496611)
+@@ -0,0 +1,19 @@
++# CamelCase
++class Point:
++    pass
++
++
++# snake_case
++def get_something():
++    pass
++
++
++def main():
++    point = Point()
++    print(Point)
++    print(point)
++    print(type(point))
++
++
++if __name__ == '__main__':
++    main()
+Index: WebPython/lessons/lessons.3/step_4.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/WebPython/lessons/lessons.3/step_4.py b/WebPython/lessons/lessons.3/step_4.py
+new file mode 100644
+--- /dev/null	(date 1672654496617)
++++ b/WebPython/lessons/lessons.3/step_4.py	(date 1672654496617)
+@@ -0,0 +1,14 @@
++class MyStr(str):
++
++    def __add__(self, other) -> "MyStr":
++        return self.__class__(f"{self}{other}")
++
++    def __radd__(self, other):
++        return self.__class__(f"{other}{self}")
++
++
++a = MyStr("abc")
++
++# a - 1
++
++print(1 + a)
+Index: WebPython/lessons/lessons.3/step_2.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/WebPython/lessons/lessons.3/step_2.py b/WebPython/lessons/lessons.3/step_2.py
+new file mode 100644
+--- /dev/null	(date 1672654496651)
++++ b/WebPython/lessons/lessons.3/step_2.py	(date 1672654496651)
+@@ -0,0 +1,12 @@
++class MyStr(str):
++    def __add__(self, other) -> "MyStr":
++        return self.__class__(f"{self}{other}")
++
++
++str = MyStr
++
++# list = [1, 2, 3]
++
++a = str("abc")
++
++print(a + 123)
+\ No newline at end of file
+Index: WebPython/lessons/lessons.3/step_3.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/WebPython/lessons/lessons.3/step_3.py b/WebPython/lessons/lessons.3/step_3.py
+new file mode 100644
+--- /dev/null	(date 1672654496657)
++++ b/WebPython/lessons/lessons.3/step_3.py	(date 1672654496657)
+@@ -0,0 +1,14 @@
++class MyStr(str):
++    def __add__(self, other) -> "MyStr":
++        return self.__class__(f"{self}{other}")
++
++    def __call__(self, *args, **kwargs):
++        kw = (
++            f"{key}={value}"
++            for key, value in kwargs.items()
++        )
++        return self.__class__(" ".join((self, *map(str, args), *kw)))
++
++
++a = MyStr("abc")
++print(a(123, 456, "qwerty", None, spam="eggs"))
+Index: WebPython/lessons/lessons.3/stept_8.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/WebPython/lessons/lessons.3/stept_8.py b/WebPython/lessons/lessons.3/stept_8.py
+new file mode 100644
+--- /dev/null	(date 1672654496664)
++++ b/WebPython/lessons/lessons.3/stept_8.py	(date 1672654496664)
+@@ -0,0 +1,39 @@
++from datetime import datetime
++
++
++# CamelCase
++# UpperCamelCase
++# PascalCase
++from typing import Union
++
++
++class TimeHelper:
++
++    # def __init__(self):
++    #     self.MINUTE_SECONDS = 60
++    #     self.HOUR_MINUTES = 60
++    #     self.HOUR_SECONDS = self.MINUTE_SECONDS * self.HOUR_MINUTES
++
++    # UPPER_SNAKE_CASE
++    MINUTE_SECONDS = 60
++    HOUR_MINUTES = 60
++    HOUR_SECONDS = MINUTE_SECONDS * HOUR_MINUTES
++
++    @classmethod
++    def happened_in_last_hours(cls, x_hours: int, timestamp: Union[int, float]) -> bool:
++        # print("class method called", cls)
++        now = datetime.now()
++        now_timestamp = now.timestamp()
++        diff_seconds = now_timestamp - timestamp
++        time_seconds = x_hours * cls.HOUR_SECONDS
++        return diff_seconds < time_seconds
++
++
++def main():
++    th = TimeHelper()
++    print(th.happened_in_last_hours(2, datetime.now().timestamp()))
++    print(TimeHelper.happened_in_last_hours(2, datetime.now().timestamp()))
++
++
++if __name__ == "__main__":
++    main()
+\ No newline at end of file
+Index: WebPython/lessons/lessons.3/stept_9.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/WebPython/lessons/lessons.3/stept_9.py b/WebPython/lessons/lessons.3/stept_9.py
+new file mode 100644
+--- /dev/null	(date 1672654496670)
++++ b/WebPython/lessons/lessons.3/stept_9.py	(date 1672654496670)
+@@ -0,0 +1,88 @@
++from string import ascii_letters
++
++VOWELS = "aeiou"
++
++
++def contains_vowels(name: str):
++    return any((letter in name for letter in VOWELS))
++
++
++class User:
++
++    REQUIRED_AGE = 21
++
++    def __init__(self, username: str, age: int):
++        self.username = username
++        self.age = age
++
++    def __str__(self):
++        # return self.username
++        return f"{self.username} {self.age}"
++
++    def __repr__(self):
++        # return str(self)
++        return f"{self.__class__.__name__}(username={self.username!r}, age={self.age})"
++
++    def __eq__(self, other: "User"):
++        if not isinstance(other, User):
++            return False
++        return self.username == other.username and self.age == other.age
++
++    def copy(self):
++        return self.__class__(username=self.username, age=self.age)
++
++    @property
++    def age_ok(self) -> bool:
++        return self.check_age(self.age)
++
++    @classmethod
++    def check_age(cls, age: int):
++        print(cls)
++        return age >= cls.REQUIRED_AGE
++
++    @staticmethod
++    def name_contains_vowels(name: str):
++        return any((letter in name for letter in VOWELS))
++
++    # contains_vowels = staticmethod(contains_vowels)
++    # name_contains_vowels = staticmethod(contains_vowels)
++
++
++# User.contains_vowels = staticmethod(contains_vowels)
++
++
++def main():
++    user = User("foobar", 123)
++    user2 = user
++    print(user)
++    print(user == user2)
++    print(user is user2)
++
++    user3 = user.copy()
++
++    print(user3)
++    print(user3 == user2)
++    print(user3 is user2)
++    user3.username = "spameggs"
++    user2.age = 42
++    print(user)
++    print(user2)
++    print(user3)
++    user3.age = 20
++    print(user3.age_ok)
++    print(user2.age_ok)
++
++    print(user.check_age(23))
++    print(user.check_age(21))
++    print(user.check_age(20))
++
++    print('User.check_age(42)', User.check_age(42))
++
++    print('User.name_contains_vowels("qwwrty")', User.name_contains_vowels("qwwrty"))
++    print('User.name_contains_vowels("qwewrty")', User.name_contains_vowels("qwewrty"))
++    print('contains_vowels("abc")', contains_vowels("abc"))
++    # print('User.contains_vowels("qwewrty")', User.contains_vowels("oj"))
++
++
++if __name__ == '__main__':
++    main()
+\ No newline at end of file
+Index: WebPython/lessons/lessom.2/products.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/WebPython/lessons/lessom.2/products.py b/WebPython/lessons/lessom.2/products.py
+new file mode 100644
+--- /dev/null	(date 1672654496571)
++++ b/WebPython/lessons/lessom.2/products.py	(date 1672654496571)
+@@ -0,0 +1,110 @@
++class Product:
++
++    TYPE = "product"
++
++    def __init__(self, name: str, price: float):
++        self._name = name
++        # self._price = price
++        self.price = price
++        self.__inner_value = "foobar"
++
++    @property
++    def name(self):  # getter
++        return self._name
++
++    @name.setter
++    def name(self, value):  # setter
++        print("check access to set name.. (TODO)", value)
++        self._name = value
++
++    def make_discount(self, discount: int) -> None:
++        self.price *= ((100 - discount) / 100)
++        # self.price = self.price * ((100 - discount) / 100)
++        # return self.price
++        # return self.price * ((100 - discount) / 100)
++
++    def some_method(self):
++        print("I have access!", self.__inner_value)
++
++    def __str__(self) -> str:
++        return self.name
++        # return f"{self.__class__.__name__}(name={self.name!r})"
++
++    def __repr__(self):
++        return f"{self.__class__.__name__}(name={self.name!r})"
++        # return f"<{self.__class__.__name__}>(name={self.name!r})"
++
++
++class Phone(Product):
++    TYPE = "phone"
++
++
++class NoteBook(Product):
++    TYPE = "laptop"
++
++    def __init__(self, name: str, price: float, backlit_keyboard: bool):
++        super().__init__(name, price)
++        # self.name = "name"
++        self.backlit_keyboard = backlit_keyboard
++
++
++# def vars(obj):
++#     return obj.__dict__
++
++
++def main():
++    product1 = Phone("Galaxy S", 1000)
++    print(type(product1))
++    print(isinstance(product1, Product))
++    print(isinstance(product1, NoteBook))
++    print(isinstance(product1, Phone))
++    print(product1)
++    print([product1])
++
++    product2 = NoteBook("MacBook", 2000, True)
++    print(type(product2))
++    print(isinstance(product2, Product))
++    print(isinstance(product2, NoteBook))
++    print(isinstance(product2, Phone))
++    print(product2)
++    print(vars(product2))
++
++    product1.name = "iPhone"
++    print(product1)
++
++    product1._name = "Honor"
++    print(product1)
++
++    print(vars(product1))
++    product1.some_method()
++    # print(product1.__inner_value)
++    product1.__inner_value = "fizzbuzz"
++    print(vars(product1))
++    print(product1.__inner_value)
++    print(product1._Product__inner_value)
++    product1.some_method()
++
++    print(vars(product1))
++    print(product1.__dict__)
++
++    print(repr(product1.name))
++    print([product1.name])
++
++    print(product1)
++    print([product1])
++
++    print(f"as str: {product1}")
++    print(f"as repr: {product1!r}")
++    print(f"as repr: {repr(product1)}")
++
++    print(product1.TYPE)
++    print(product2.TYPE)
++
++    product1.make_discount(10)
++    product2.make_discount(20)
++    print(vars(product1))
++    print(vars(product2))
++
++
++if __name__ == '__main__':
++    main()
+\ No newline at end of file
+Index: WebPython/lessons/lessom.2/shapers.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/WebPython/lessons/lessom.2/shapers.py b/WebPython/lessons/lessom.2/shapers.py
+new file mode 100644
+--- /dev/null	(date 1672654496579)
++++ b/WebPython/lessons/lessom.2/shapers.py	(date 1672654496579)
+@@ -0,0 +1,49 @@
++class Shape:
++    def get_area(self):
++        print("no data for area")
++
++
++class Rectangle(Shape):
++
++    def __init__(self, a, b):
++        self.a = a
++        self.b = b
++        # self.area = a * b
++
++    def get_area(self):
++        return self.a * self.b
++
++
++class Square(Rectangle):
++    # noinspection PyMissingConstructor
++    def __init__(self, a):
++        # super().__init__(a, a)
++        self.a = a
++
++    @property
++    def b(self):
++        return self.a
++
++
++def main():
++    rectangle = Rectangle(3, 4)
++    print(rectangle.get_area())
++    # print(rectangle.area)
++    rectangle.a = 5
++    print(rectangle.get_area())
++    # print(rectangle.area)
++
++    square = Square(6)
++    print(square.get_area())
++    print(square.a)
++    print(square.b)
++
++    square.a = 5
++
++    print(square.a)
++    print(square.b)
++    print(square.get_area())
++
++
++if __name__ == '__main__':
++    main()
+\ No newline at end of file
+Index: WebPython/lessons/lessom.2/timehalper.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/WebPython/lessons/lessom.2/timehalper.py b/WebPython/lessons/lessom.2/timehalper.py
+new file mode 100644
+--- /dev/null	(date 1672654496588)
++++ b/WebPython/lessons/lessom.2/timehalper.py	(date 1672654496588)
+@@ -0,0 +1,56 @@
++from datetime import datetime
++
++
++# CamelCase
++# UpperCamelCase
++# PascalCase
++class TimeHelper:
++
++    # def __init__(self):
++    #     self.MINUTE_SECONDS = 60
++    #     self.HOUR_MINUTES = 60
++    #     self.HOUR_SECONDS = self.MINUTE_SECONDS * self.HOUR_MINUTES
++
++    # UPPER_SNAKE_CASE
++    MINUTE_SECONDS = 60
++    HOUR_MINUTES = 60
++    HOUR_SECONDS = MINUTE_SECONDS * HOUR_MINUTES
++
++    # def happened_in_last_hours(self, x_hours: int, timestamp: int) -> bool:
++    #     print("method called", self)
++    #     now = datetime.now()
++    #     now_timestamp = now.timestamp()
++    #     diff_seconds = now_timestamp - timestamp
++    #     time_seconds = x_hours * self.HOUR_SECONDS
++    #     return diff_seconds < time_seconds
++
++    @classmethod
++    def happened_in_last_hours(cls, x_hours: int, timestamp: int) -> bool:
++        print("class method called", cls)
++        now = datetime.now()
++        now_timestamp = now.timestamp()
++        diff_seconds = now_timestamp - timestamp
++        time_seconds = x_hours * cls.HOUR_SECONDS
++        return diff_seconds < time_seconds
++
++
++def happened_in_last_hours(x_hours: int, timestamp: int) -> bool:
++    now = datetime.now()
++    now_timestamp = now.timestamp()
++    diff_seconds = now_timestamp - timestamp
++    time_seconds = x_hours * TimeHelper.HOUR_SECONDS
++    return diff_seconds < time_seconds
++
++
++def main():
++    now = datetime.now()
++    print(now)
++    print(now.isoformat())
++    print(now.timestamp())
++    print(TimeHelper.happened_in_last_hours(1, int(now.timestamp())))
++    # time_helper = TimeHelper()
++    # print(time_helper.happened_in_last_hours(1, int(now.timestamp())))
++
++
++if __name__ == '__main__':
++    main()
+\ No newline at end of file
+Index: WebPython/lessons/lessom.2/vichect.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/WebPython/lessons/lessom.2/vichect.py b/WebPython/lessons/lessom.2/vichect.py
+new file mode 100644
+--- /dev/null	(date 1672654496596)
++++ b/WebPython/lessons/lessom.2/vichect.py	(date 1672654496596)
+@@ -0,0 +1,57 @@
++class BaseVehicle:
++    def __init__(self, weight):
++        self.weight = weight
++
++    def make_sound(self):
++        return None
++
++
++class Car(BaseVehicle):
++    def __init__(self, weight, wheels):
++        print("car's super init", super(Car, self).__init__)
++        super().__init__(weight)
++        self.wheels = wheels
++
++    def make_sound(self):
++        # old = super().make_sound()
++        # print("old was:", old)
++        return "beep"
++
++    def lets_ride(self):
++        print("vroom")
++
++
++class Ship(BaseVehicle):
++    def __init__(self, weight, color):
++        super().__init__(weight)
++        self.color = color
++
++    def make_sound(self):
++        return "boop"
++
++    def set_sail(self):
++        print("set sail!")
++
++
++class Amphibian(Car, Ship):
++    def __init__(self, weight, wheels, color):
++        # Car.__init__(self, weight, wheels)
++        # Ship.__init__(self, weight, color)
++        # (super(Ship, self).__init__)
++
++        self.weight = weight
++        self.wheels = wheels
++        self.color = color
++
++
++if __name__ == '__main__':
++    amphibian = Amphibian(1234, 6, "green")
++    print(Amphibian.mro())
++    print(Amphibian.__mro__)
++
++    print(vars(amphibian))
++
++    amphibian.set_sail()
++    amphibian.lets_ride()
++
++    print(amphibian.make_sound())
+\ No newline at end of file
+Index: WebPython/lessons/lessom.2/absrtact.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/WebPython/lessons/lessom.2/absrtact.py b/WebPython/lessons/lessom.2/absrtact.py
+new file mode 100644
+--- /dev/null	(date 1672654496563)
++++ b/WebPython/lessons/lessom.2/absrtact.py	(date 1672654496563)
+@@ -0,0 +1,70 @@
++from abc import ABC, abstractmethod
++
++
++class Switchable(ABC):
++    @abstractmethod
++    def on(self):
++        raise NotImplementedError
++
++    @abstractmethod
++    def off(self):
++        raise NotImplementedError
++
++
++class LightBulb(Switchable):
++    def on(self):
++        print("light bulb turned on")
++
++    def off(self):
++        print("light bulb turned off")
++
++
++# class WirelessMouse(Switchable, BatteryStatusInfo...):
++class WirelessMouse(Switchable):
++    def on(self):
++        print("mouse turned on")
++
++    def off(self):
++        print("mouse turned off")
++
++
++class PowerSwitch:
++    def __init__(self, client: Switchable):
++        self.client = client
++        self.on = False
++
++    def toggle(self):
++        if self.on:
++            self.client.off()
++            self.on = False
++        else:
++            self.client.on()
++            self.on = True
++
++
++def main():
++    bulb = LightBulb()
++    bulb.on()
++    bulb.off()
++
++    mouse = WirelessMouse()
++    mouse.on()
++    mouse.off()
++
++    switch1 = PowerSwitch(bulb)
++    switch1.toggle()
++    switch1.toggle()
++    switch1.toggle()
++    switch1.toggle()
++
++    switch2 = PowerSwitch(mouse)
++    switch2.toggle()
++    switch2.toggle()
++    switch2.toggle()
++    switch2.toggle()
++
++    # Switchable()
++
++
++if __name__ == '__main__':
++    main()
+\ No newline at end of file
+diff --git a/WebPython/lessons/lesson.1/__init__.py b/WebPython/lessons/lesson.1/__init__.py
+new file mode 100644
+diff --git a/WebPython/lessons/__init__.py b/WebPython/lessons/__init__.py
+new file mode 100644
+diff --git a/WebPython/__init__.py b/WebPython/__init__.py
+new file mode 100644
