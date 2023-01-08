@@ -12,12 +12,14 @@ class BagKegs:
             value = self.__keg[random.randint(0, len(self.__keg) -1)]
             self.__keg.remove(value)
             count = 0
+
             return value
         else:
             return "Сумка пуста"
 
     @property
     def lets_see_bag(self):
+
         return len(self.__keg)
 
 

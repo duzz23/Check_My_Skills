@@ -17,13 +17,10 @@ class Card:
         while not self.c:
             user_card = []
             list_of_nums = list(range(1, 90))  # список чисел которым заполняется карточка
-
-
             count = 1
             # Создаем три строчки
             for i in range(3):
                 matx = []
-
                 # Наполняем 6 случайними цифрами в строчке
                 for i in range(6):
                     counter = random.randint(0, len(list_of_nums) - 1)
@@ -40,7 +37,6 @@ class Card:
                 for i in range(9):
                     user_card.append(str(matx[i]))
             self.__matrix = user_card
-
             self.c = True
 
     def show_card(self):
@@ -95,6 +91,7 @@ class Card:
             # remove() удаляем выпавшое число из списка, что бы не выпало повторно
             self.__matrix.remove(str(value))
             print('Компуктер прав! Идем дальше!')
+
             return True
         else:
             print("Компуктер ошибся, ты победил")
@@ -123,10 +120,3 @@ class Card:
             return True
 
 
-# b=Card('bob')
-print(Card('Bab'))
-# print(b._return_matrx())
-# if str(39) in b._return_matrx():
-#     print('yup')
-# elif str(5) not in b._return_matrx():
-#     print('no')
