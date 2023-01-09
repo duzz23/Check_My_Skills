@@ -124,7 +124,7 @@ class Card:
 
 
 # b=Card('bob')
-print(Card('Bab'))
+# Card('Bab').if_copm_tap_n(5)
 # print(b._return_matrx())
 # if str(39) in b._return_matrx():
 #     print('yup')

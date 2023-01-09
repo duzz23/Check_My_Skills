@@ -1,0 +1,43 @@
+#Версия парссера
+version: '3'
+
+services:
+  #  pg описываем сервисы
+  db:
+    #     image: название имиджа (если его нет подгружается из docker hub)
+    image: postgres
+    #     environment прописываем настроеки emv
+    environment:
+      POSTGRES_DB: blog
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
+      #       PGDATA расположение где база будет лежать (стандартный пусть)
+      PGDATA: /var/lib/postgres/data/pgdata
+    #     ports порта
+    ports:
+      - '5435:5432'
+    # №1   volumes: для хранения базы данных на локальном компе(не обязательно)
+    volumes:
+      - db-data:/var/lib/postgres/data/pgdata
+
+# №2 volumes и db-data уазатель монтировать базу каждый раз при запуске контейнера (№1 если не указали путь на лок машине)
+
+  #  pg описываем сервисы
+  django:
+    build: .
+    container_name: test_docker
+    volumes:
+      - .:/usr/src/
+
+    ports:
+      - '8000:8000'
+    env_file:
+      - .env
+
+    depends_on:
+      - db
+
+volumes:
+  db-data:
+
+
