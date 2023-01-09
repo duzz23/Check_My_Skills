@@ -1,0 +1,2 @@
+EMAIL_USER: 'duzz@mail.ru'
+EMAIL_PASSWORD: 'aWTNTcJuPDXjwWNN2k5c'

@@ -3,6 +3,8 @@
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/WebPython" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Web_app_chek_questioning_form" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Web_app_chek_questioning_form/lh_forms" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/lotto" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/lotto/LOTTO" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/lotto/lottosim" vcs="Git" />

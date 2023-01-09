@@ -1,24 +1,65 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="942b2b2a-b71e-40ce-9680-2213eb786c29" name="Changes" comment="ADD:  test Game Lotto">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Docker/.dockerignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Docker/.env" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Docker/.idea/Docker.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Docker/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Docker/docker-compose.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Docker/requirements.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Docker/src/db.sqlite3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Docker/src/manage.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Docker/src/src/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Docker/src/src/asgi.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Docker/src/src/settings.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Docker/src/src/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Docker/src/src/wsgi.py" afterDir="false" />
+    <list default="true" id="942b2b2a-b71e-40ce-9680-2213eb786c29" name="Changes" comment="ADD:  in main add Docker">
+      <change afterPath="$PROJECT_DIR$/Asyncio/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Asyncio/.idea/Asyncio.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Asyncio/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Asyncio/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Asyncio/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Asyncio/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Asyncio/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Asyncio/test_src/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Asyncio/test_src/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Asyncio/test_src/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Asyncio/test_src/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Asyncio/test_src/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Asyncio/test_src/.idea/test_src.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Asyncio/test_src/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Asyncio/test_src/1_select.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Asyncio/test_src/2_selektors.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Asyncio/test_src/3_generators.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Asyncio/test_src/4_async_gens.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Asyncio/test_src/original.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Asyncio/test_src/test.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Celery/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Celery/.idea/Celery.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Celery/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Celery/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Celery/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Celery/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Celery/src/.env.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Celery/src/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Celery/src/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Celery/src/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Celery/src/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Celery/src/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Celery/src/.idea/src.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Celery/src/celery_src/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Celery/src/celery_src/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Celery/src/celery_src/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Celery/src/celery_src/forms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Celery/src/celery_src/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Celery/src/celery_src/migrations/0002_contact_email_contact_name.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Celery/src/celery_src/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Celery/src/celery_src/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Celery/src/celery_src/service.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Celery/src/celery_src/tasks.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Celery/src/celery_src/templates/celery_src/contact.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Celery/src/celery_src/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Celery/src/celery_src/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Celery/src/celery_src/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Celery/src/celerybeat-schedule.db" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Celery/src/db.sqlite3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Celery/src/manage.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Celery/src/src/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Celery/src/src/asgi.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Celery/src/src/celery.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Celery/src/src/settings.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Celery/src/src/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Celery/src/src/wsgi.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lotto_Geme/testing/test_card.py" beforeDir="false" afterPath="$PROJECT_DIR$/Lotto_Geme/testing/test_card.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OOP/lotto/card.py" beforeDir="false" afterPath="$PROJECT_DIR$/OOP/lotto/card.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,7 +86,7 @@
     </option>
   </component>
   <component name="Git.Merge.Settings">
-    <option name="BRANCH" value="OOP" />
+    <option name="BRANCH" value="docker" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -271,7 +312,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673175251749</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="ADD:  in main add Docker">
+      <created>1673265487310</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1673265487310</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -295,7 +343,8 @@
     <MESSAGE value="ADD: game" />
     <MESSAGE value="ADD:  Game Lotto" />
     <MESSAGE value="ADD:  test Game Lotto" />
-    <option name="LAST_COMMIT_MESSAGE" value="ADD:  test Game Lotto" />
+    <MESSAGE value="ADD:  in main add Docker" />
+    <option name="LAST_COMMIT_MESSAGE" value="ADD:  in main add Docker" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Studies$pytest_for_test_card_TestCard_test_if_copm_tap_y.coverage" NAME="pytest for test_card.TestCard.test_if_copm_tap_y Coverage Results" MODIFIED="1673194977482" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Lotto_Geme/testing" />
