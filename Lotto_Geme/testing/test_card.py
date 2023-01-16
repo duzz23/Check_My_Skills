@@ -16,20 +16,20 @@ class TestBagKegs:
 
 @fixture
 def card_instance() -> Card:
-    return Card("Andrey")
-
-
-
+    card = Card("Andrey")
+    card._Card__matrix = [
+    '4', '39', ' ', '52', '37', '13', '46', ' ', ' ',
+    ' ', '12', '79', ' ', '11', '73', '45', ' ', '51',
+    '55', ' ', '83', '30', '14', ' ', ' ', '16', '88'
+    ]
+    return card
 
 class TestCard:
 
-    def test_if_copm_tap_n2(self, card_instance, value='n'):
-        result = card_instance.if_copm_tap_n(value)
-        assert result == True
+    def test_if_copm_tap_y(self, card_instance):
+        result = card_instance.if_copm_tap_y('4')
+        assert result is True
 
-
-    # Данный тест нужно доработат, не понял как сделать проверку "if str(value) in self.__matrix:"
-    # def test_if_copm_tap_y(self, value="y"):
-    #     Card("Andrey").self.__matrix = ['y']
-    #     result = Card("Andrey").if_copm_tap_y(value)
-    #     assert result == True
+    def test_if_copm_tap_n2(self, card_instance):
+        result = card_instance.if_copm_tap_n('5')
+        assert result is True
