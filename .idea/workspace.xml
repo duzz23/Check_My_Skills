@@ -1,65 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="942b2b2a-b71e-40ce-9680-2213eb786c29" name="Changes" comment="ADD:  in main add Docker">
-      <change afterPath="$PROJECT_DIR$/Asyncio/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Asyncio/.idea/Asyncio.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Asyncio/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Asyncio/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Asyncio/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Asyncio/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Asyncio/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Asyncio/test_src/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Asyncio/test_src/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Asyncio/test_src/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Asyncio/test_src/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Asyncio/test_src/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Asyncio/test_src/.idea/test_src.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Asyncio/test_src/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Asyncio/test_src/1_select.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Asyncio/test_src/2_selektors.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Asyncio/test_src/3_generators.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Asyncio/test_src/4_async_gens.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Asyncio/test_src/original.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Asyncio/test_src/test.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Celery/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Celery/.idea/Celery.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Celery/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Celery/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Celery/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Celery/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Celery/src/.env.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Celery/src/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Celery/src/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Celery/src/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Celery/src/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Celery/src/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Celery/src/.idea/src.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Celery/src/celery_src/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Celery/src/celery_src/admin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Celery/src/celery_src/apps.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Celery/src/celery_src/forms.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Celery/src/celery_src/migrations/0001_initial.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Celery/src/celery_src/migrations/0002_contact_email_contact_name.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Celery/src/celery_src/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Celery/src/celery_src/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Celery/src/celery_src/service.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Celery/src/celery_src/tasks.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Celery/src/celery_src/templates/celery_src/contact.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Celery/src/celery_src/tests.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Celery/src/celery_src/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Celery/src/celery_src/views.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Celery/src/celerybeat-schedule.db" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Celery/src/db.sqlite3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Celery/src/manage.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Celery/src/src/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Celery/src/src/asgi.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Celery/src/src/celery.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Celery/src/src/settings.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Celery/src/src/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Celery/src/src/wsgi.py" afterDir="false" />
+    <list default="true" id="942b2b2a-b71e-40ce-9680-2213eb786c29" name="Changes" comment="ADD:  app">
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Celery/src/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SQLAlchemy /db.example1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SQLAlchemy /db.example2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SQLAlchemy /db.sqlite3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SQLAlchemy /db.sqllite3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SQLAlchemy /docker-compose.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SQLAlchemy /orm0_clear_sql.yaml.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SQLAlchemy /orm1_create_table.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SQLAlchemy /orm2_declarative.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SQLAlchemy /orm3_sql_orm_queries.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SQLAlchemy /requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_02_01_2023,_13_14_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_02_01_2023,_13_16_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_02_01_2023__13_14__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_02_01_2023__13_16__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lotto_Geme/testing/test_card.py" beforeDir="false" afterPath="$PROJECT_DIR$/Lotto_Geme/testing/test_card.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sportshop/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/sportshop/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,8 +33,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Blank Requirements File" />
         <option value="Python Script" />
+        <option value="Blank Requirements File" />
       </list>
     </option>
   </component>
@@ -93,6 +57,7 @@
       <map>
         <entry key="$PROJECT_DIR$" value="main" />
         <entry key="$PROJECT_DIR$/WebPython" value="WebPython.2022.10" />
+        <entry key="$PROJECT_DIR$/Web_app_chek_questioning_form/lh_forms" value="SQLAlchemy" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -122,13 +87,17 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/macbookpro/Desktop/Studies/Tests/Lotto_testing&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/macbookpro/Desktop/Studies&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;
   },
   &quot;keyToStringList&quot;: {
+    &quot;ChangesTree.GroupingKeys&quot;: [
+      &quot;directory&quot;,
+      &quot;repository&quot;
+    ],
     &quot;DatabaseDriversLRU&quot;: [
       &quot;postgresql&quot;
     ]
@@ -239,10 +208,10 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python tests.pytest for test_card.test_if_copm_tap_n" />
         <item itemvalue="Python tests.pytest for test_card.TestCard.test_if_copm_tap_y" />
-        <item itemvalue="Python tests.pytest for test_card.TestCard.test_if_copm_tap_n" />
         <item itemvalue="Python tests.pytest for test_card.TestCard.test_if_copm_tap_n2" />
+        <item itemvalue="Python tests.pytest for test_card.TestCard.test_if_copm_tap_n" />
+        <item itemvalue="Python tests.pytest for test_card.test_if_copm_tap_n" />
         <item itemvalue="Python.card" />
       </list>
     </recent_temporary>
@@ -262,6 +231,10 @@
       <workItem from="1672827381949" duration="56054000" />
       <workItem from="1673199993826" duration="4160000" />
       <workItem from="1673255448497" duration="8338000" />
+      <workItem from="1673529485341" duration="2262000" />
+      <workItem from="1673606366831" duration="20213000" />
+      <workItem from="1673876502075" duration="2385000" />
+      <workItem from="1673881318140" duration="331000" />
     </task>
     <task id="LOCAL-00001" summary="ADD: apps">
       <created>1672655645433</created>
@@ -348,6 +321,7 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Studies$pytest_for_test_card_TestCard_test_if_copm_tap_y.coverage" NAME="pytest for test_card.TestCard.test_if_copm_tap_y Coverage Results" MODIFIED="1673194977482" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Lotto_Geme/testing" />
+    <SUITE FILE_PATH="coverage/Studies$orm_create_table.coverage" NAME="orm_create_table Coverage Results" MODIFIED="1673714056547" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/SQLAlchemy " />
     <SUITE FILE_PATH="coverage/_$my_parse.coverage" NAME="my_parse Coverage Results" MODIFIED="1672249382364" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Парсер и HTTP " />
     <SUITE FILE_PATH="coverage/Studies$.coverage" NAME=" Coverage Results" MODIFIED="1673014781892" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Lotto_Geme/testing" />
     <SUITE FILE_PATH="coverage/Studies$game.coverage" NAME="game Coverage Results" MODIFIED="1672934476528" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/OOP/lotto" />
@@ -356,15 +330,17 @@
     <SUITE FILE_PATH="coverage/Studies$step_9.coverage" NAME="step_9 Coverage Results" MODIFIED="1672832568728" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/WebPython/lessons/lesson.03" />
     <SUITE FILE_PATH="coverage/Studies$gamee.coverage" NAME="gamee Coverage Results" MODIFIED="1672864907166" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lotto/LOTTO" />
     <SUITE FILE_PATH="coverage/Studies$pytest_for_test_card_TestCard_test_if_copm_tap_n.coverage" NAME="pytest for test_card.TestCard.test_if_copm_tap_n Coverage Results" MODIFIED="1673173411585" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Lotto_Geme/testing" />
-    <SUITE FILE_PATH="coverage/Studies$pytest_for_test_card_TestCard_test_if_copm_tap_n2.coverage" NAME="pytest for test_card.TestCard.test_if_copm_tap_n2 Coverage Results" MODIFIED="1673193753397" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Lotto_Geme/testing" />
+    <SUITE FILE_PATH="coverage/Studies$pytest_for_test_card_TestCard_test_if_copm_tap_n2.coverage" NAME="pytest for test_card.TestCard.test_if_copm_tap_n2 Coverage Results" MODIFIED="1673881594437" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Lotto_Geme/testing" />
     <SUITE FILE_PATH="coverage/Studies$my_integrator.coverage" NAME="my_integrator Coverage Results" MODIFIED="1672658601303" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/OOP" />
-    <SUITE FILE_PATH="coverage/Studies$pytest_for_test_card_TestCard.coverage" NAME="pytest for test_card.TestCard Coverage Results" MODIFIED="1673168481546" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Lotto_Geme/testing" />
+    <SUITE FILE_PATH="coverage/Studies$pytest_for_test_card_TestCard.coverage" NAME="pytest for test_card.TestCard Coverage Results" MODIFIED="1673881605344" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Lotto_Geme/testing" />
     <SUITE FILE_PATH="coverage/Studies$card__1_.coverage" NAME="card (1) Coverage Results" MODIFIED="1673014536077" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/OOP/lotto" />
     <SUITE FILE_PATH="coverage/Studies$pytest_for_test_card_TestCard_test_show_card.coverage" NAME="pytest for test_card.TestCard.test_show_card Coverage Results" MODIFIED="1673037894366" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Lotto_Geme/testing" />
     <SUITE FILE_PATH="coverage/Studies$pytest_for_test_card_test_if_copm_tap_n.coverage" NAME="pytest for test_card.test_if_copm_tap_n Coverage Results" MODIFIED="1673168672982" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Lotto_Geme/testing" />
+    <SUITE FILE_PATH="coverage/Studies$orm2_declarative.coverage" NAME="orm2_declarative Coverage Results" MODIFIED="1673715578001" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/SQLAlchemy " />
     <SUITE FILE_PATH="coverage/_$parser_less1_274199_fec77a.coverage" NAME="parser_less1-274199-fec77a Coverage Results" MODIFIED="1672237760890" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Парсер и HTTP " />
     <SUITE FILE_PATH="coverage/Studies$cardsssss.coverage" NAME="cardsssss Coverage Results" MODIFIED="1672943203283" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/OOP" />
     <SUITE FILE_PATH="coverage/Studies$pytest_in_test_card_py.coverage" NAME="pytest in test_card.py Coverage Results" MODIFIED="1673037549990" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Lotto_Geme/testing" />
+    <SUITE FILE_PATH="coverage/Studies$orm3_sql_orm_queries.coverage" NAME="orm3_sql_orm_queries Coverage Results" MODIFIED="1673722779096" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/SQLAlchemy " />
     <SUITE FILE_PATH="coverage/Studies$pytest_for_test_card_TestCard_test_find_num.coverage" NAME="pytest for test_card.TestCard.test_find_num Coverage Results" MODIFIED="1673035093414" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Lotto_Geme/testing" />
     <SUITE FILE_PATH="coverage/Studies$keg__1_.coverage" NAME="keg (1) Coverage Results" MODIFIED="1673001125790" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Lotto_Geme" />
     <SUITE FILE_PATH="coverage/Studies$pytest_for_test_card_TestCard_test_lest_see_bag.coverage" NAME="pytest for test_card.TestCard.test_lest_see_bag Coverage Results" MODIFIED="1673036652517" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Lotto_Geme/testing" />
@@ -373,6 +349,7 @@
     <SUITE FILE_PATH="coverage/Studies$game__1_.coverage" NAME="game (1) Coverage Results" MODIFIED="1673000642651" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Lotto_Geme" />
     <SUITE FILE_PATH="coverage/Studies$game_lottery.coverage" NAME="game_lottery Coverage Results" MODIFIED="1672862416392" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/OOP" />
     <SUITE FILE_PATH="coverage/Studies$bag.coverage" NAME="bag Coverage Results" MODIFIED="1672864894924" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lotto/LOTTO" />
+    <SUITE FILE_PATH="coverage/Studies$orm0_clear_sql_yaml.coverage" NAME="orm0_clear_sql.yaml Coverage Results" MODIFIED="1673712944267" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/SQLAlchemy " />
     <SUITE FILE_PATH="coverage/Studies$pytest_for_test_card_TestCard_test_lets_see_bag.coverage" NAME="pytest for test_card.TestCard.test_lets_see_bag Coverage Results" MODIFIED="1673036912431" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Lotto_Geme/testing" />
   </component>
 </project>
